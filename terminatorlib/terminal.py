@@ -861,7 +861,7 @@ class Terminal(gtk.VBox):
         # Any button event should grab focus
         widget.grab_focus()
 
-        if event.button == 1:
+#        if event.button == 1:
 #            # Ctrl+leftclick on a URL should open it
 #            if event.state & gtk.gdk.CONTROL_MASK == gtk.gdk.CONTROL_MASK:
 #                url = self.check_for_url(event)
