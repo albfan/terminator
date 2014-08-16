@@ -862,10 +862,15 @@ class Terminal(gtk.VBox):
         widget.grab_focus()
 
         if event.button == 1:
-            # Ctrl+leftclick on a URL should open it
-            if event.state & gtk.gdk.CONTROL_MASK == gtk.gdk.CONTROL_MASK:
-                url = self.check_for_url(event)
-                if url:
+#            # Ctrl+leftclick on a URL should open it
+#            if event.state & gtk.gdk.CONTROL_MASK == gtk.gdk.CONTROL_MASK:
+#                url = self.check_for_url(event)
+#                if url:
+#                    self.open_url(url, prepare=True)
+        if event.button == 1:
+            # leftclick on a URL should open it
+            url = self.check_for_url(event)
+            if url:
                     self.open_url(url, prepare=True)
         elif event.button == 2:
             # middleclick should paste the clipboard
