@@ -1348,6 +1348,22 @@ class Terminal(Gtk.VBox):
         """Restore normal layout"""
         self.emit('unzoom')
 
+    def toggle_tabs_visibility(self, widget=None):
+        status = self.config['tab_position']
+        old_tab_position = self.config['old_tab_position']
+        if status == 'hidden':
+            if old_tab_position:
+                #if there's no oldstatus, hidden is default option
+                self.config['tab_position'] = old_tab_position
+                self.config.save()
+        else:
+            self.config['old_tab_position'] = status
+            self.config['tab_position'] = 'hidden'
+            self.config.save()
+
+        terminator = Terminator()
+        terminator.reconfigure()
+
     def set_cwd(self, cwd=None):
         """Set our cwd"""
         if cwd is not None:
@@ -1764,6 +1780,9 @@ class Terminal(Gtk.VBox):
             self.unzoom()
         else:
             self.maximise()
+
+    def key_toggle_tabs(self):
+        self.toggle_tabs_visibility()
 
     def key_scaled_zoom(self):
         if self.is_zoomed():
