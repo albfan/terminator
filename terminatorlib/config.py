@@ -91,6 +91,7 @@ DEFAULTS = {
             'borderless'            : False,
             'extra_styling'         : True,
             'tab_position'          : 'top',
+            'old_tab_position'      : 'top',
             'broadcast_default'     : 'group',
             'close_button_on_tab'   : True,
             'hide_tabbar'           : False,

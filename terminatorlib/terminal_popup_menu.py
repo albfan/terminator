@@ -186,6 +186,11 @@ class TerminalPopupMenu(object):
         item.connect('toggled', lambda x: terminal.do_scrollbar_toggle())
         menu.append(item)
 
+        item = gtk.CheckMenuItem(_('Toggle tab visibility'))
+        item.set_active(terminal.scrollbar.get_property('visible'))
+        item.connect('toggled', self.toggle_tab_visibility)
+        menu.append(item)
+
         if hasattr(Gtk, 'Builder'):  # VERIFY FOR GTK3: is this ever false?
             item = Gtk.MenuItem.new_with_mnemonic(_('_Preferences'))
             item.connect('activate', lambda x: PrefsEditor(self.terminal))
@@ -235,7 +240,23 @@ class TerminalPopupMenu(object):
         menu.popup(None, None, None, None, button, time)
 
         return(True)
+    
+    def toggle_tab_visibility(self, widget):
+        """tab visibility"""
+        status = self.config['tab_position']
+        old_tab_position = self.config['old_tab_position']
+        if status == 'hidden':
+            if old_tab_position:
+                #if there's no oldstatus, hidden is default option
+                self.config['tab_position'] = old_tab_position
+                self.config.save()
+        else:
+            self.config['old_tab_position'] = status
+            self.config['tab_position'] = 'hidden'
+            self.config.save()
 
+        terminator = Terminator()
+        terminator.reconfigure()
 
     def add_encoding_items(self, menu):
         """Add the encoding list to the menu"""
