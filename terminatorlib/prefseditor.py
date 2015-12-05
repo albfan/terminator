@@ -1,5 +1,5 @@
 #!/usr/bin/env python2
-"""Preferences Editor for Terminator. 
+"""Preferences Editor for Terminator.
 
 Load a UIBuilder config file, display it,
 populate it with our current config, then optionally read that back out and
@@ -9,6 +9,7 @@ write it to a config file
 
 import os
 from gi.repository import GObject, Gtk, Gdk
+import re
 
 from util import dbg, err
 import config
@@ -165,7 +166,7 @@ class PrefsEditor:
                         'edit_tab_title'   : _('Edit tab title'),
                         'layout_launcher'  : _('Open layout launcher window'),
                         'next_profile'     : _('Switch to next profile'),
-                        'previous_profile' : _('Switch to previous profile'), 
+                        'previous_profile' : _('Switch to previous profile'),
                         'help'             : _('Open the manual')
             }
 
@@ -390,6 +391,14 @@ class PrefsEditor:
             liststore.append([keybinding, self.keybindingnames[keybinding],
                              keyval, mask])
 
+
+        self.modelfilter = liststore.filter_new()
+        self.modelfilter.set_visible_func(self.match_filter)
+        self.sortmodelfilter = gtk.TreeModelSort(self.modelfilter)
+        self.sortmodelfilter.set_sort_func(2, self.sort_shortcuts, None)
+        widget.set_model(self.sortmodelfilter)
+        selection = widget.get_selection()
+        selection.connect('changed', self.on_cellrederer_clicked)
         ## Plugins tab
         # Populate the plugin list
         widget = guiget('pluginlist')
@@ -405,9 +414,36 @@ class PrefsEditor:
             self.pluginiters[plugin] = liststore.append([plugin,
                                              self.plugins[plugin]])
         selection = widget.get_selection()
+
+        widget = guiget('entryfilter')
+        widget.connect('changed', self.entry_changed)
         selection.connect('changed', self.on_plugin_selection_changed)
         if len(self.pluginiters) > 0:
             selection.select_iter(liststore.get_iter_first())
+
+    def sort_shortcuts(self, treemodel, iter1, iter2, user_data):
+        key1 = treemodel.get_value(iter1, 2)
+        mods1 = treemodel.get_value(iter1, 3)
+        key2 = treemodel.get_value(iter2, 2)
+        mods2 = treemodel.get_value(iter2, 3)
+        return cmp(gtk.accelerator_get_label(key1, mods1), gtk.accelerator_get_label(key2, mods2))
+
+    def entry_changed(self, data):
+        self.modelfilter.refilter()
+        return
+
+    def match_filter(self, model, iter, udata=None):
+        col1 = model.get_value(iter, 0)
+        col2 = model.get_value(iter, 1)
+        key = model.get_value(iter, 2)
+        mods = model.get_value(iter, 3)
+
+        guiget = self.builder.get_object
+        widget = guiget('entryfilter')
+        filter_text = widget.get_text()
+        check = lambda col: col != None and bool(re.match(r'.*('+filter_text+r')', str(col), re.I))
+        accel = gtk.accelerator_get_label(key, mods)
+        return check(col1) or check(col2) or check(accel)
 
     def set_profile_values(self, profile):
         """Update the profile values for a given profile"""
@@ -832,7 +868,7 @@ class PrefsEditor:
         elif selected == 2:
             value = 'ascii-del'
         elif selected == 3:
-            value == 'escape-sequence'
+            value = 'escape-sequence'
         else:
             value = 'automatic'
         self.config['backspace_binding'] = value
@@ -976,10 +1012,10 @@ class PrefsEditor:
 
         customwidget = guiget('cursor_color_custom_radiobutton')
         colorwidget = guiget('cursor_color')
-        
+
         colorwidget.set_sensitive(customwidget.get_active())
         self.config['cursor_color_fg'] = not customwidget.get_active()
-        
+
         try:
             colorwidget.set_color(Gdk.color_parse(self.config['cursor_color']))
         except (ValueError, TypeError):
@@ -1264,7 +1300,7 @@ class PrefsEditor:
         widget.set_sensitive(not value)
         self.config['use_system_font'] = value
         self.config.save()
-        
+
         if self.config['use_system_font'] == True:
             fontname = self.config.get_system_mono_font()
             if fontname is not None:
@@ -1502,22 +1538,36 @@ class PrefsEditor:
 
     def on_cellrenderer_accel_edited(self, liststore, path, key, mods, _code):
         """Handle an edited keybinding"""
-        celliter = liststore.get_iter_from_string(path)
+        liststore_path = str(self.modelfilter.convert_path_to_child_path(path)[0])
+        celliter = liststore.get_iter_from_string(liststore_path)
         liststore.set(celliter, 2, key, 3, mods)
-
-        binding = liststore.get_value(liststore.get_iter(path), 0)
+        binding = liststore.get_value(liststore.get_iter(liststore_path), 0)
         accel = Gtk.accelerator_name(key, mods)
         self.config['keybindings'][binding] = accel
         self.config.save()
 
     def on_cellrenderer_accel_cleared(self, liststore, path):
         """Handle the clearing of a keybinding accelerator"""
-        celliter = liststore.get_iter_from_string(path)
+        liststore_path = str(self.modelfilter.convert_path_to_child_path(path)[0])
+        celliter = liststore.get_iter_from_string(liststore_path)
         liststore.set(celliter, 2, 0, 3, 0)
 
-        binding = liststore.get_value(liststore.get_iter(path), 0)
+        binding = liststore.get_value(liststore.get_iter(liststore_path), 0)
         self.config['keybindings'][binding] = None
         self.config.save()
+
+    def on_cellrederer_clicked(self, selection):
+        (listmodel, rowiter) = selection.get_selected()
+        if not rowiter:
+            # Something is wrong, just jump to the first item in the list
+            return
+        layout = listmodel.get_value(rowiter, 0)
+
+    #def on_column_clicked(self, treeviewcolumn, data):
+    def on_column_clicked(self, treeviewcolumn):
+        guiget = self.builder.get_object
+        treeview = guiget('keybindingtreeview')
+        treeview.set_search_column(treeviewcolumn.get_sort_column_id())
 
     def on_open_manual(self,  widget):
         """Open the fine manual"""
