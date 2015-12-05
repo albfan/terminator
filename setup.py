@@ -41,7 +41,7 @@ class BuildData(build):
       # Build the translations
       for po in glob.glob (os.path.join (PO_DIR, '*.po')):
         lang = os.path.basename(po[:-3])
-        mo = os.path.join(MO_DIR, lang, 'terminator.mo')
+        mo = os.path.join(MO_DIR, lang, 'LC_MESSAGES', 'terminator.mo')
 
         directory = os.path.dirname(mo)
         if not os.path.exists(directory):
@@ -159,8 +159,8 @@ class InstallData(install_data):
     data_files = []
 
     if not self.distribution.without_gettext:
-      for mo in glob.glob (os.path.join (MO_DIR, '*', 'terminator.mo')):
-       lang = os.path.basename(os.path.dirname(mo))
+      for mo in glob.glob (os.path.join (MO_DIR, '*', 'LC_MESSAGES', 'terminator.mo')):
+       lang = os.path.basename(os.path.dirname(os.path.dirname(mo)))
        dest = os.path.join('share', 'locale', lang, 'LC_MESSAGES')
        data_files.append((dest, [mo]))
 
