@@ -38,7 +38,10 @@ class DBusService(Borg, dbus.service.Object):
         """Class initialiser"""
         Borg.__init__(self, self.__class__.__name__)
         self.prepare_attributes()
-        dbus.service.Object.__init__(self, self.bus_name, BUS_PATH)
+        try:
+            dbus.service.Object.__init__(self, self.bus_name, BUS_PATH)
+        except:
+            None
 
     def prepare_attributes(self):
         """Ensure we are populated"""
