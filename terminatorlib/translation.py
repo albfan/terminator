@@ -19,14 +19,16 @@
 
 from version import APP_NAME
 from util import dbg
+import os
 
 _ = None
 
 # pylint: disable-msg=W0702
 try:
-    import gettext
-    gettext.textdomain(APP_NAME)
-    _ = gettext.gettext
+    import locale
+    locale.bindtextdomain(APP_NAME, os.getenv('TERMINATOR_LOCALEDIR'))
+    locale.textdomain(APP_NAME)
+    _ = locale.gettext
 except:
     dbg("Using fallback _()")
 
