@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-12 16:51+0100\n"
+"POT-Creation-Date: 2017-12-10 03:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,7 +75,7 @@ msgstr ""
 #: ../data/terminator.desktop.in.h:1 ../data/terminator.appdata.xml.in.h:1
 #: ../terminatorlib/plugins/activitywatch.py:84
 #: ../terminatorlib/plugins/activitywatch.py:163
-#: ../terminatorlib/preferences.glade.h:148
+#: ../terminatorlib/preferences.glade.h:149
 msgid "Terminator"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgid "Multiple terminals in one window"
 msgstr ""
 
 #: ../data/terminator.appdata.xml.in.h:3
-#: ../terminatorlib/preferences.glade.h:149
+#: ../terminatorlib/preferences.glade.h:150
 msgid "The robot future of terminals"
 msgstr ""
 
@@ -148,31 +148,31 @@ msgstr ""
 msgid "The preferences window where you can change the defaults"
 msgstr ""
 
-#: ../terminatorlib/container.py:163
+#: ../terminatorlib/container.py:164
 msgid "Close?"
 msgstr ""
 
-#: ../terminatorlib/container.py:169
+#: ../terminatorlib/container.py:170
 msgid "Close _Terminals"
 msgstr ""
 
-#: ../terminatorlib/container.py:171
+#: ../terminatorlib/container.py:172
 msgid "<big><b>Close multiple terminals?</b></big>"
 msgstr ""
 
-#: ../terminatorlib/container.py:175
+#: ../terminatorlib/container.py:176
 msgid ""
 "This window has several terminals open. Closing the window will also close "
 "all terminals within it."
 msgstr ""
 
-#: ../terminatorlib/container.py:178
+#: ../terminatorlib/container.py:179
 msgid ""
 "This tab has several terminals open. Closing the tab will also close all "
 "terminals within it."
 msgstr ""
 
-#: ../terminatorlib/container.py:198
+#: ../terminatorlib/container.py:199
 msgid "Do not show this message next time"
 msgstr ""
 
@@ -333,11 +333,11 @@ msgstr ""
 msgid "Launch"
 msgstr ""
 
-#: ../terminatorlib/notebook.py:353
+#: ../terminatorlib/notebook.py:359
 msgid "tab"
 msgstr ""
 
-#: ../terminatorlib/notebook.py:573
+#: ../terminatorlib/notebook.py:627
 msgid "Close Tab"
 msgstr ""
 
@@ -388,51 +388,43 @@ msgid "Set the working directory"
 msgstr ""
 
 #: ../terminatorlib/optionparse.py:82
-msgid "Set a custom name (WM_CLASS) property on the window"
-msgstr ""
-
-#: ../terminatorlib/optionparse.py:84
 msgid "Set a custom icon for the window (by file or name)"
 msgstr ""
 
-#: ../terminatorlib/optionparse.py:87
+#: ../terminatorlib/optionparse.py:85
 msgid "Set a custom WM_WINDOW_ROLE property on the window"
 msgstr ""
 
-#: ../terminatorlib/optionparse.py:89
+#: ../terminatorlib/optionparse.py:87
 msgid "Launch with the given layout"
 msgstr ""
 
-#: ../terminatorlib/optionparse.py:91
+#: ../terminatorlib/optionparse.py:89
 msgid "Select a layout from a list"
 msgstr ""
 
-#: ../terminatorlib/optionparse.py:93
+#: ../terminatorlib/optionparse.py:91
 msgid "Use a different profile as the default"
 msgstr ""
 
-#: ../terminatorlib/optionparse.py:95
+#: ../terminatorlib/optionparse.py:93
 msgid "Disable DBus"
 msgstr ""
 
-#: ../terminatorlib/optionparse.py:97
+#: ../terminatorlib/optionparse.py:95
 msgid "Enable debugging information (twice for debug server)"
 msgstr ""
 
-#: ../terminatorlib/optionparse.py:99
+#: ../terminatorlib/optionparse.py:97
 msgid "Comma separated list of classes to limit debugging to"
 msgstr ""
 
-#: ../terminatorlib/optionparse.py:101
+#: ../terminatorlib/optionparse.py:99
 msgid "Comma separated list of methods to limit debugging to"
 msgstr ""
 
-#: ../terminatorlib/optionparse.py:103
+#: ../terminatorlib/optionparse.py:101
 msgid "If Terminator is already running, just open a new tab"
-msgstr ""
-
-#: ../terminatorlib/plugins/activitywatch.py:25
-msgid "ActivityWatch plugin unavailable: please install python-notify"
 msgstr ""
 
 #: ../terminatorlib/plugins/activitywatch.py:55
@@ -453,98 +445,98 @@ msgstr ""
 msgid "Silence in: %s"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:61
+#: ../terminatorlib/plugins/custom_commands.py:62
 msgid "_Custom Commands"
 msgstr ""
 
 #. VERIFY FOR GTK3: is this ever false?
-#: ../terminatorlib/plugins/custom_commands.py:67
-#: ../terminatorlib/terminal_popup_menu.py:188
+#: ../terminatorlib/plugins/custom_commands.py:68
+#: ../terminatorlib/terminal_popup_menu.py:190
 msgid "_Preferences"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:120
+#: ../terminatorlib/plugins/custom_commands.py:135
 msgid "Custom Commands Configuration"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:124
-#: ../terminatorlib/plugins/custom_commands.py:273
+#: ../terminatorlib/plugins/custom_commands.py:139
+#: ../terminatorlib/plugins/custom_commands.py:288
 #: ../terminatorlib/plugins/logger.py:22
 #: ../terminatorlib/plugins/terminalshot.py:21
 msgid "_Cancel"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:125
-#: ../terminatorlib/plugins/custom_commands.py:274
+#: ../terminatorlib/plugins/custom_commands.py:140
+#: ../terminatorlib/plugins/custom_commands.py:289
 msgid "_OK"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:152
+#: ../terminatorlib/plugins/custom_commands.py:167
 msgid "Enabled"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:156
+#: ../terminatorlib/plugins/custom_commands.py:171
 #: ../terminatorlib/preferences.glade.h:137
 msgid "Name"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:160
+#: ../terminatorlib/plugins/custom_commands.py:175
 #: ../terminatorlib/preferences.glade.h:103
 msgid "Command"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:174
+#: ../terminatorlib/plugins/custom_commands.py:189
 #: ../terminatorlib/preferences.glade.h:37
 msgid "Top"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:180
+#: ../terminatorlib/plugins/custom_commands.py:195
 msgid "Up"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:186
+#: ../terminatorlib/plugins/custom_commands.py:201
 msgid "Down"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:192
+#: ../terminatorlib/plugins/custom_commands.py:207
 msgid "Last"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:198
+#: ../terminatorlib/plugins/custom_commands.py:213
 msgid "New"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:203
+#: ../terminatorlib/plugins/custom_commands.py:218
 msgid "Edit"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:209
+#: ../terminatorlib/plugins/custom_commands.py:224
 msgid "Delete"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:269
+#: ../terminatorlib/plugins/custom_commands.py:284
 msgid "New Command"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:280
+#: ../terminatorlib/plugins/custom_commands.py:295
 msgid "Enabled:"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:286
+#: ../terminatorlib/plugins/custom_commands.py:301
 msgid "Name:"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:292
+#: ../terminatorlib/plugins/custom_commands.py:307
 msgid "Command:"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:315
-#: ../terminatorlib/plugins/custom_commands.py:425
+#: ../terminatorlib/plugins/custom_commands.py:330
+#: ../terminatorlib/plugins/custom_commands.py:440
 msgid "You need to define a name and command"
 msgstr ""
 
-#: ../terminatorlib/plugins/custom_commands.py:332
-#: ../terminatorlib/plugins/custom_commands.py:444
+#: ../terminatorlib/plugins/custom_commands.py:347
+#: ../terminatorlib/plugins/custom_commands.py:459
 #, python-format
 msgid "Name *%s* already exist"
 msgstr ""
@@ -591,7 +583,7 @@ msgid "Escape sequence"
 msgstr ""
 
 #. FIXME: Why isn't this being done by Terminator() ?
-#: ../terminatorlib/preferences.glade.h:5 ../terminatorlib/window.py:704
+#: ../terminatorlib/preferences.glade.h:5 ../terminatorlib/window.py:710
 msgid "All"
 msgstr ""
 
@@ -1104,7 +1096,7 @@ msgid "Compatibility"
 msgstr ""
 
 #: ../terminatorlib/preferences.glade.h:134
-#: ../terminatorlib/terminal_popup_menu.py:195
+#: ../terminatorlib/terminal_popup_menu.py:197
 msgid "Profiles"
 msgstr ""
 
@@ -1137,22 +1129,26 @@ msgid "Keybinding"
 msgstr ""
 
 #: ../terminatorlib/preferences.glade.h:144
-msgid "Keybindings"
+msgid "Filter:"
 msgstr ""
 
 #: ../terminatorlib/preferences.glade.h:145
-msgid "Plugin"
+msgid "Keybindings"
 msgstr ""
 
 #: ../terminatorlib/preferences.glade.h:146
-msgid "This plugin has no configuration options"
+msgid "Plugin"
 msgstr ""
 
 #: ../terminatorlib/preferences.glade.h:147
+msgid "This plugin has no configuration options"
+msgstr ""
+
+#: ../terminatorlib/preferences.glade.h:148
 msgid "Plugins"
 msgstr ""
 
-#: ../terminatorlib/preferences.glade.h:150
+#: ../terminatorlib/preferences.glade.h:151
 msgid ""
 "The goal of this project is to produce a useful tool for arranging "
 "terminals. It is inspired by programs such as gnome-multi-term, quadkonsole, "
@@ -1166,11 +1162,11 @@ msgid ""
 "the Development link)"
 msgstr ""
 
-#: ../terminatorlib/preferences.glade.h:153
+#: ../terminatorlib/preferences.glade.h:154
 msgid "The Manual"
 msgstr ""
 
-#: ../terminatorlib/preferences.glade.h:154
+#: ../terminatorlib/preferences.glade.h:155
 msgid ""
 "<a href=\"http://gnometerminator.blogspot.com/p/introduction.html"
 "\">Homepage</a>\n"
@@ -1180,493 +1176,481 @@ msgid ""
 "<a href=\"https://translations.launchpad.net/terminator\">Translations</a>"
 msgstr ""
 
-#: ../terminatorlib/preferences.glade.h:159
+#: ../terminatorlib/preferences.glade.h:160
 msgid "About"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:96
+#: ../terminatorlib/prefseditor.py:99
 msgid "Increase font size"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:97
+#: ../terminatorlib/prefseditor.py:100
 msgid "Decrease font size"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:98
+#: ../terminatorlib/prefseditor.py:101
 msgid "Restore original font size"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:99
+#: ../terminatorlib/prefseditor.py:102
 msgid "Create a new tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:100 ../terminatorlib/prefseditor.py:102
+#: ../terminatorlib/prefseditor.py:103 ../terminatorlib/prefseditor.py:105
 msgid "Focus the next terminal"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:101 ../terminatorlib/prefseditor.py:103
+#: ../terminatorlib/prefseditor.py:104 ../terminatorlib/prefseditor.py:106
 msgid "Focus the previous terminal"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:104
+#: ../terminatorlib/prefseditor.py:107
 msgid "Focus the terminal above"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:105
+#: ../terminatorlib/prefseditor.py:108
 msgid "Focus the terminal below"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:106
+#: ../terminatorlib/prefseditor.py:109
 msgid "Focus the terminal left"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:107
+#: ../terminatorlib/prefseditor.py:110
 msgid "Focus the terminal right"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:108
+#: ../terminatorlib/prefseditor.py:111
 msgid "Rotate terminals clockwise"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:109
+#: ../terminatorlib/prefseditor.py:112
 msgid "Rotate terminals counter-clockwise"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:110
+#: ../terminatorlib/prefseditor.py:113
 msgid "Split horizontally"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:111
+#: ../terminatorlib/prefseditor.py:114
 msgid "Split vertically"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:112
+#: ../terminatorlib/prefseditor.py:115
 msgid "Close terminal"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:113
+#: ../terminatorlib/prefseditor.py:116
 msgid "Copy selected text"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:114
+#: ../terminatorlib/prefseditor.py:117
 msgid "Paste clipboard"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:115
+#: ../terminatorlib/prefseditor.py:118
 msgid "Show/Hide the scrollbar"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:116
+#: ../terminatorlib/prefseditor.py:119
 msgid "Search terminal scrollback"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:117
+#: ../terminatorlib/prefseditor.py:120
 msgid "Scroll upwards one page"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:118
+#: ../terminatorlib/prefseditor.py:121
 msgid "Scroll downwards one page"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:119
+#: ../terminatorlib/prefseditor.py:122
 msgid "Scroll upwards half a page"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:120
+#: ../terminatorlib/prefseditor.py:123
 msgid "Scroll downwards half a page"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:121
+#: ../terminatorlib/prefseditor.py:124
 msgid "Scroll upwards one line"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:122
+#: ../terminatorlib/prefseditor.py:125
 msgid "Scroll downwards one line"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:123
+#: ../terminatorlib/prefseditor.py:126
 msgid "Close window"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:124
+#: ../terminatorlib/prefseditor.py:127
 msgid "Resize the terminal up"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:125
+#: ../terminatorlib/prefseditor.py:128
 msgid "Resize the terminal down"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:126
+#: ../terminatorlib/prefseditor.py:129
 msgid "Resize the terminal left"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:127
+#: ../terminatorlib/prefseditor.py:130
 msgid "Resize the terminal right"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:128
+#: ../terminatorlib/prefseditor.py:131
 msgid "Move the tab right"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:129
+#: ../terminatorlib/prefseditor.py:132
 msgid "Move the tab left"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:130
+#: ../terminatorlib/prefseditor.py:133
 msgid "Maximize terminal"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:131
+#: ../terminatorlib/prefseditor.py:134
 msgid "Zoom terminal"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:132
+#: ../terminatorlib/prefseditor.py:135
 msgid "Switch to the next tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:133
+#: ../terminatorlib/prefseditor.py:136
 msgid "Switch to the previous tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:134
+#: ../terminatorlib/prefseditor.py:137
 msgid "Switch to the first tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:135
+#: ../terminatorlib/prefseditor.py:138
 msgid "Switch to the second tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:136
+#: ../terminatorlib/prefseditor.py:139
 msgid "Switch to the third tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:137
+#: ../terminatorlib/prefseditor.py:140
 msgid "Switch to the fourth tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:138
+#: ../terminatorlib/prefseditor.py:141
 msgid "Switch to the fifth tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:139
+#: ../terminatorlib/prefseditor.py:142
 msgid "Switch to the sixth tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:140
+#: ../terminatorlib/prefseditor.py:143
 msgid "Switch to the seventh tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:141
+#: ../terminatorlib/prefseditor.py:144
 msgid "Switch to the eighth tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:142
+#: ../terminatorlib/prefseditor.py:145
 msgid "Switch to the ninth tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:143
+#: ../terminatorlib/prefseditor.py:146
 msgid "Switch to the tenth tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:144
+#: ../terminatorlib/prefseditor.py:147
 msgid "Toggle fullscreen"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:145
+#: ../terminatorlib/prefseditor.py:148
 msgid "Reset the terminal"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:146
+#: ../terminatorlib/prefseditor.py:149
 msgid "Reset and clear the terminal"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:147
+#: ../terminatorlib/prefseditor.py:150
 msgid "Toggle window visibility"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:148
+#: ../terminatorlib/prefseditor.py:151
 msgid "Group all terminals"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:149
+#: ../terminatorlib/prefseditor.py:152
 msgid "Group/Ungroup all terminals"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:150
+#: ../terminatorlib/prefseditor.py:153
 msgid "Ungroup all terminals"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:151
+#: ../terminatorlib/prefseditor.py:154
 msgid "Group terminals in tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:152
+#: ../terminatorlib/prefseditor.py:155
 msgid "Group/Ungroup terminals in tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:153
+#: ../terminatorlib/prefseditor.py:156
 msgid "Ungroup terminals in tab"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:154
+#: ../terminatorlib/prefseditor.py:157
 msgid "Create a new window"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:155
+#: ../terminatorlib/prefseditor.py:158
 msgid "Spawn a new Terminator process"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:156
+#: ../terminatorlib/prefseditor.py:159
 msgid "Don't broadcast key presses"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:157
+#: ../terminatorlib/prefseditor.py:160
 msgid "Broadcast key presses to group"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:158
+#: ../terminatorlib/prefseditor.py:161
 msgid "Broadcast key events to all"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:159
+#: ../terminatorlib/prefseditor.py:162
 msgid "Insert terminal number"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:160
+#: ../terminatorlib/prefseditor.py:163
 msgid "Insert padded terminal number"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:161
+#: ../terminatorlib/prefseditor.py:164
 msgid "Edit window title"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:162
+#: ../terminatorlib/prefseditor.py:165
 msgid "Edit terminal title"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:163
+#: ../terminatorlib/prefseditor.py:166
 msgid "Edit tab title"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:164
+#: ../terminatorlib/prefseditor.py:167
 msgid "Open layout launcher window"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:165
+#: ../terminatorlib/prefseditor.py:168
 msgid "Switch to next profile"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:166
+#: ../terminatorlib/prefseditor.py:169
 msgid "Switch to previous profile"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:167
+#: ../terminatorlib/prefseditor.py:170
 msgid "Open the manual"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:1136 ../terminatorlib/prefseditor.py:1141
+#: ../terminatorlib/prefseditor.py:1180 ../terminatorlib/prefseditor.py:1185
 msgid "New Profile"
 msgstr ""
 
-#: ../terminatorlib/prefseditor.py:1181 ../terminatorlib/prefseditor.py:1186
+#: ../terminatorlib/prefseditor.py:1225 ../terminatorlib/prefseditor.py:1230
 msgid "New Layout"
 msgstr ""
 
 #. Label
-#: ../terminatorlib/searchbar.py:52
+#: ../terminatorlib/searchbar.py:48
 msgid "Search:"
 msgstr ""
 
-#: ../terminatorlib/searchbar.py:68
+#: ../terminatorlib/searchbar.py:60
 msgid "Close Search bar"
 msgstr ""
 
 #. Next Button
-#: ../terminatorlib/searchbar.py:73
+#: ../terminatorlib/searchbar.py:65
 msgid "Next"
 msgstr ""
 
 #. Previous Button
-#: ../terminatorlib/searchbar.py:79
+#: ../terminatorlib/searchbar.py:71
 msgid "Prev"
 msgstr ""
 
 #. Wrap checkbox
-#: ../terminatorlib/searchbar.py:85
+#: ../terminatorlib/searchbar.py:77
 msgid "Wrap"
 msgstr ""
 
-#: ../terminatorlib/searchbar.py:144
-msgid "Searching scrollback"
-msgstr ""
-
-#: ../terminatorlib/searchbar.py:162 ../terminatorlib/searchbar.py:188
-msgid "No more results"
-msgstr ""
-
-#: ../terminatorlib/searchbar.py:203
-msgid "Found at row"
-msgstr ""
-
-#: ../terminatorlib/terminal_popup_menu.py:59
+#: ../terminatorlib/terminal_popup_menu.py:61
 msgid "_Send email to..."
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:60
+#: ../terminatorlib/terminal_popup_menu.py:62
 msgid "_Copy email address"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:62
+#: ../terminatorlib/terminal_popup_menu.py:64
 msgid "Ca_ll VoIP address"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:63
+#: ../terminatorlib/terminal_popup_menu.py:65
 msgid "_Copy VoIP address"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:84
+#: ../terminatorlib/terminal_popup_menu.py:86
 msgid "_Open link"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:86
+#: ../terminatorlib/terminal_popup_menu.py:88
 msgid "_Copy address"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:102
+#: ../terminatorlib/terminal_popup_menu.py:104
 msgid "_Copy"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:107
+#: ../terminatorlib/terminal_popup_menu.py:109
 msgid "_Paste"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:114
+#: ../terminatorlib/terminal_popup_menu.py:116
 msgid "Split H_orizontally"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:124
+#: ../terminatorlib/terminal_popup_menu.py:126
 msgid "Split V_ertically"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:134
+#: ../terminatorlib/terminal_popup_menu.py:136
 msgid "Open _Tab"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:140
+#: ../terminatorlib/terminal_popup_menu.py:142
 msgid "Open _Debug Tab"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:147
+#: ../terminatorlib/terminal_popup_menu.py:149
 msgid "_Close"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:156
+#: ../terminatorlib/terminal_popup_menu.py:158
 msgid "_Zoom terminal"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:161
+#: ../terminatorlib/terminal_popup_menu.py:163
 msgid "Ma_ximize terminal"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:168
+#: ../terminatorlib/terminal_popup_menu.py:170
 msgid "_Restore all terminals"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:175
+#: ../terminatorlib/terminal_popup_menu.py:177
 msgid "Grouping"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:182
+#: ../terminatorlib/terminal_popup_menu.py:184
 msgid "Show _scrollbar"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:239
+#: ../terminatorlib/terminal_popup_menu.py:244
 msgid "Encodings"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:254
+#: ../terminatorlib/terminal_popup_menu.py:259
 msgid "Default"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:257
+#: ../terminatorlib/terminal_popup_menu.py:262
 msgid "User defined"
 msgstr ""
 
-#: ../terminatorlib/terminal_popup_menu.py:273
+#: ../terminatorlib/terminal_popup_menu.py:278
 msgid "Other Encodings"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:433
+#: ../terminatorlib/terminal.py:440
 msgid "N_ew group..."
 msgstr ""
 
-#: ../terminatorlib/terminal.py:439
+#: ../terminatorlib/terminal.py:446
 msgid "_None"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:459
+#: ../terminatorlib/terminal.py:466
 #, python-format
 msgid "Remove group %s"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:464
+#: ../terminatorlib/terminal.py:471
 msgid "G_roup all in tab"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:469
+#: ../terminatorlib/terminal.py:476
 msgid "Ungro_up all in tab"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:474
+#: ../terminatorlib/terminal.py:481
 msgid "Remove all groups"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:481
+#: ../terminatorlib/terminal.py:488
 #, python-format
 msgid "Close group %s"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:491
+#: ../terminatorlib/terminal.py:498
 msgid "Broadcast _all"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:492
+#: ../terminatorlib/terminal.py:499
 msgid "Broadcast _group"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:493
+#: ../terminatorlib/terminal.py:500
 msgid "Broadcast _off"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:509
+#: ../terminatorlib/terminal.py:516
 msgid "_Split to this group"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:514
+#: ../terminatorlib/terminal.py:521
 msgid "Auto_clean groups"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:521
+#: ../terminatorlib/terminal.py:528
 msgid "_Insert terminal number"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:525
+#: ../terminatorlib/terminal.py:532
 msgid "Insert _padded terminal number"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:1394
+#: ../terminatorlib/terminal.py:1409
 msgid "Unable to find a shell"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:1427
+#: ../terminatorlib/terminal.py:1442
 msgid "Unable to start shell:"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:1848
+#: ../terminatorlib/terminal.py:1863
 msgid "Rename Window"
 msgstr ""
 
-#: ../terminatorlib/terminal.py:1856
+#: ../terminatorlib/terminal.py:1871
 msgid "Enter a new title for the Terminator window..."
 msgstr ""
 
@@ -1766,11 +1750,11 @@ msgstr ""
 msgid "Omega"
 msgstr ""
 
-#: ../terminatorlib/window.py:276
+#: ../terminatorlib/window.py:278 ../terminatorlib/window.py:283
 msgid "window"
 msgstr ""
 
-#: ../terminatorlib/window.py:730
+#: ../terminatorlib/window.py:736
 #, python-format
 msgid "Tab %d"
 msgstr ""

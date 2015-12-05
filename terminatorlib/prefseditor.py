@@ -9,6 +9,7 @@ write it to a config file
 
 import os
 from gi.repository import GObject, Gtk, Gdk
+import re
 
 from util import dbg, err
 import config
@@ -376,7 +377,6 @@ class PrefsEditor:
         ## Keybindings tab
         widget = guiget('keybindingtreeview')
         liststore = widget.get_model()
-        liststore.set_sort_column_id(0, Gtk.SortType.ASCENDING)
         keybindings = self.config['keybindings']
         for keybinding in keybindings:
             keyval = 0
@@ -390,6 +390,13 @@ class PrefsEditor:
             liststore.append([keybinding, self.keybindingnames[keybinding],
                              keyval, mask])
 
+        self.modelfilter = liststore.filter_new()
+        self.modelfilter.set_visible_func(self.match_filter)
+        self.sortmodelfilter = Gtk.TreeModelSort(self.modelfilter)
+        self.sortmodelfilter.set_sort_func(2, self.sort_shortcuts, None)
+        widget.set_model(self.sortmodelfilter)
+        selection = widget.get_selection()
+        selection.connect('changed', self.on_cellrenderer_clicked)
         ## Plugins tab
         # Populate the plugin list
         widget = guiget('pluginlist')
@@ -405,9 +412,47 @@ class PrefsEditor:
             self.pluginiters[plugin] = liststore.append([plugin,
                                              self.plugins[plugin]])
         selection = widget.get_selection()
+
+        widget = guiget('entryfilter')
+        widget.connect('changed', self.entry_changed)
         selection.connect('changed', self.on_plugin_selection_changed)
         if len(self.pluginiters) > 0:
             selection.select_iter(liststore.get_iter_first())
+
+    def sort_shortcuts(self, treemodel, iter1, iter2, user_data):
+        """ordering shorcuts"""
+        key1 = treemodel.get_value(iter1, 2)
+        mods1 = Gdk.ModifierType(treemodel.get_value(iter1, 3))
+        key2 = treemodel.get_value(iter2, 2)
+        mods2 = Gdk.ModifierType(treemodel.get_value(iter2, 3))
+        return cmp(Gtk.accelerator_get_label(key1, mods1), Gtk.accelerator_get_label(key2, mods2))
+
+    def entry_changed(self, data):
+        """On filter changed"""
+        self.modelfilter.refilter()
+        return
+
+    def on_cellrenderer_clicked(self, selection):
+        (listmodel, rowiter) = selection.get_selected()
+        if not rowiter:
+            # Something is wrong, just jump to the first item in the list
+            return
+        layout = listmodel.get_value(rowiter, 0)
+
+    def match_filter(self, model, iter, udata=None):
+        """Filtering data"""
+        col1 = model.get_value(iter, 0)
+        col2 = model.get_value(iter, 1)
+        key = model.get_value(iter, 2)
+        mods = Gdk.ModifierType(model.get_value(iter, 3))
+
+        guiget = self.builder.get_object
+        widget = guiget('entryfilter')
+        filter_text = widget.get_text()
+        clean_text = lambda value: re.sub(r' +', ' ', re.sub(r'[+-]', ' ', value.strip()))
+        check = lambda col: col != None and bool(re.match(r'.*'+re.escape(clean_text(filter_text)), str(clean_text(col)), re.I))
+        accel = Gtk.accelerator_get_label(key, mods)
+        return check(col1) or check(col2) or check(accel)
 
     def set_profile_values(self, profile):
         """Update the profile values for a given profile"""
@@ -1502,20 +1547,21 @@ class PrefsEditor:
 
     def on_cellrenderer_accel_edited(self, liststore, path, key, mods, _code):
         """Handle an edited keybinding"""
-        celliter = liststore.get_iter_from_string(path)
+        liststore_path = str(self.modelfilter.convert_path_to_child_path(path)[0])
+        celliter = liststore.get_iter_from_string(liststore_path)
         liststore.set(celliter, 2, key, 3, mods)
-
-        binding = liststore.get_value(liststore.get_iter(path), 0)
+        binding = liststore.get_value(liststore.get_iter(liststore_path), 0)
         accel = Gtk.accelerator_name(key, mods)
         self.config['keybindings'][binding] = accel
         self.config.save()
 
     def on_cellrenderer_accel_cleared(self, liststore, path):
         """Handle the clearing of a keybinding accelerator"""
-        celliter = liststore.get_iter_from_string(path)
+        liststore_path = str(self.modelfilter.convert_path_to_child_path(path)[0])
+        celliter = liststore.get_iter_from_string(liststore_path)
         liststore.set(celliter, 2, 0, 3, 0)
 
-        binding = liststore.get_value(liststore.get_iter(path), 0)
+        binding = liststore.get_value(liststore.get_iter(liststore_path), 0)
         self.config['keybindings'][binding] = None
         self.config.save()
 
