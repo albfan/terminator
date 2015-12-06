@@ -158,6 +158,7 @@ DEFAULTS = {
             'move_tab_right'   : '<Shift><Control>Page_Down',
             'move_tab_left'    : '<Shift><Control>Page_Up',
             'toggle_zoom'      : '<Shift><Control>x',
+            'toggle_tabs'      : '',
             'scaled_zoom'      : '<Shift><Control>z',
             'next_tab'         : '<Control>Page_Down',
             'prev_tab'         : '<Control>Page_Up',
