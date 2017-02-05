@@ -1,14 +1,16 @@
 BZR_REPO="bzr"
+GIT_UPSTREAM=upstream
 
 if ! [ -d "$BZR_REPO" ]
 then
    mkdir $BZR_REPO
    cd $BZR_REPO
 
-   bzr branch lp:terminator
+   LANG=C bzr branch lp:terminator
+   cd terminator
 else
-   cd $BZR_REPO
-   bzr pull
+   cd $BZR_REPO/terminator
+   LANG=C bzr pull
 fi
 
 if [ -d ".git" ]
@@ -18,13 +20,13 @@ fi
 
 git init
 
-bzr fast-export . | git fast-import
+LANG=C bzr fast-export . | git fast-import
 git checkout -f master
 
-git remote add local ../
+git remote add local ../../
 
 git log --graph --decorate --oneline --simplify-by-decoration --all --color
 
-git push local master:newmaster
-git push local --tags
+git push --force local master:$GIT_UPSTREAM
+git push --force local --tags
 # 4. Relaunch this script anytime you want to synchronize with bazaar
