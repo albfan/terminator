@@ -6,17 +6,15 @@ multi-terminal on steroids.
 
 For those puzzled on bzr (like me) use this fork.
 
-1. Clone bazaar repo 
+1. Clone this repo
 
-        $ bzr branch lp:terminator
+        $ git clone https://github.com/albfan/terminator
 
-2. Start a git repo
-
-        $ git init
-
-3. Use the script [bzr2git.sh] to update git repo
+2. Use the script `bzr2git.sh` to update git repo
 
         $ ./bzr2git.sh
+
+3. You will get a upstream branch with all the changes from bazaar upstream
 
 4. Relaunch that script anytime you want to synchronize with bazaar
 
